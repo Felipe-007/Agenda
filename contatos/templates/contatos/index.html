@@ -1,0 +1,66 @@
+{% extends 'base.html' %}
+
+{%block conteudo%}
+
+<h1 class="mt-5">Projeto em Python/Django</h1>
+
+<h2 class="mt-5">Minha agenda</h2>
+
+<table class="table">
+    <thead>
+    <tr>
+        <th>ID</th>
+        <th>Nome</th>
+        <th>Sobrenome</th>
+        <th>Telefone</th>
+        <th>Categoria</th>
+    </tr>
+    </thead>
+    <tbody>
+        {% for contato in contatos %}
+            {% if contato.mostrar %}
+                <tr>
+                    <th>{{ contato.id }}</th>
+                    <td>
+                        <a href="{% url 'ver_contato' contato.id %}"> {{ contato.nome }}</a>
+                    </td>
+                    <td>{{ contato.sobrenome }}</td>
+                    <td>{{ contato.telefone }}</td>
+                    <td>{{ contato.categoria }}</td>
+                </tr>
+            {% endif %}
+        {% endfor %}
+    </tbody>
+</table>
+
+<nav aria-label="Page navigation example">
+  <ul class="pagination">
+      {% for pagina in contatos.paginator.page_range %}
+        {% if contatos.number == pagina %}
+            <li class="page-item active">
+                <a class="page-link" href="?p={{ pagina }}&termo={{ request.GET.termo }}">{{ pagina }}</a>
+            </li>
+        {% else %}
+            <li class="page-item">
+                <a class="page-link" href="?p={{ pagina }}&termo={{ request.GET.termo }}">{{ pagina }}</a>
+            </li>
+        {% endif %}
+      {% endfor %}
+  </ul>
+</nav>
+
+
+<br>
+<form method="POST" action="{% url 'login' %}">
+    {% csrf_token %}
+    <button type="submit" class="btn btn-primary">Entrar</button>
+</form>
+
+<br>
+<form method="POST" action="{% url 'cadastro' %}">
+    {% csrf_token %}
+    <button type="submit" class="btn btn-primary">Cadastrar-me</button>
+</form>
+
+
+{%endblock%}
