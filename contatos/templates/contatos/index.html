@@ -50,17 +50,4 @@
 </nav>
 
 
-<br>
-<form method="POST" action="{% url 'login' %}">
-    {% csrf_token %}
-    <button type="submit" class="btn btn-primary">Entrar</button>
-</form>
-
-<br>
-<form method="POST" action="{% url 'cadastro' %}">
-    {% csrf_token %}
-    <button type="submit" class="btn btn-primary">Cadastrar-me</button>
-</form>
-
-
 {%endblock%}

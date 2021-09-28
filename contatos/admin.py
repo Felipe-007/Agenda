@@ -2,8 +2,7 @@ from django.contrib import admin
 from .models import Categoria, Contato  #importará de models a categoria e contato
 
 """
-felipels
-8615
+Área administrativa
 """
 
 class ContatoAdmin(admin.ModelAdmin):

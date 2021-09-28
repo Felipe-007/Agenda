@@ -152,3 +152,8 @@ MESSAGE_TAGS = {  #altera as tags
 }
 
 django_heroku.settings(locals())
+
+try:
+    from .local_settings import *
+except ImportError:
+    pass
