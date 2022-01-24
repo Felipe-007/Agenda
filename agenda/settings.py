@@ -11,7 +11,6 @@ https://docs.djangoproject.com/en/3.2/ref/settings/
 """
 
 import os
-import django_heroku
 from pathlib import Path
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
@@ -27,7 +26,7 @@ SECRET_KEY = 'django-insecure-%8p)#fr!w8wj7*hvx=50mr&q+uapz5pxtg=l=ko&l)fl2#qt*&
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['35.247.192.84']
 
 
 # Application definition
@@ -81,13 +80,12 @@ DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
         'NAME': 'agenda_mysql',
-        'USER': 'root',
-        'PASSWORD': '',
-        'HOST': 'localhost',
+        'USER': 'userdjango',
+        'PASSWORD': '8615',
+        'HOST': '127.0.0.1',
         'PORT': '3306',
     }
 }
-
 
 # Password validation
 # https://docs.djangoproject.com/en/3.2/ref/settings/#auth-password-validators
@@ -150,8 +148,6 @@ MESSAGE_TAGS = {  #altera as tags
     constants.SUCCESS: 'alert-success',
     constants.INFO: 'alert-info',
 }
-
-django_heroku.settings(locals())
 
 try:
     from .local_settings import *
