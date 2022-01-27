@@ -44,31 +44,54 @@ git clone https://github.com/Felipe-007/Agenda.git
 
 ```
 cd agenda
-python -m venv venv
-venv\Scripts\activate.bat
+python -m venv Myenv
+Myenv\Scripts\activate.bat
 pip install -r requirements.txt
 python manage.py migrate
+python manage.py runserver
 ```
 
 - Para **Linux**:
 
 ```
 cd agenda
-python3.7 -m venv venv
-. venv/bin/activate
+python3.7 -m venv Myenv
+. Myenv/bin/activate
 pip install -r requirements.txt
 python manage.py migrate
+python manage.py runserver
 ```
 
 - Para **Mac**
 
 ```
 cd agenda
-python -m venv venv
-. venv/bin/activate
+python -m venv Myenv
+. Myenv/bin/activate
 pip install -r requirements.txt
 python manage.py migrate
+python manage.py runserver
 ```
+
+## :hammer_and_wrench: Mysql 
+Caso apresente erro durante a migração "python manage.py migrate", crie o arquivo local_settings.py na pasta \Agenda\agenda.
+Com a seguintes configurações:
+
+```
+ALLOWED_HOSTS = []
+
+DATABASES = {
+    'default': {
+        'ENGINE': 'django.db.backends.mysql',
+        'NAME': 'agenda_mysql',
+        'USER': 'root',
+        'PASSWORD': '',
+        'HOST': 'localhost',
+        'PORT': '3306',
+    }
+}
+```
+Realize a configuração do seu banco de dados, referenciando as configurações acima.
 
 Pronto!
 
