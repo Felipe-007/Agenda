@@ -44,9 +44,10 @@ git clone https://github.com/Felipe-007/Agenda.git
 
 ```
 cd agenda
-python -m venv Myenv
-Myenv\Scripts\activate.bat
+python -m venv venv
+venv\Scripts\activate.bat
 pip install -r requirements.txt
+configurar o mysql, conforme ícone abaixo
 python manage.py migrate
 python manage.py runserver
 ```
@@ -58,6 +59,7 @@ cd agenda
 python3.7 -m venv Myenv
 . Myenv/bin/activate
 pip install -r requirements.txt
+configurar o mysql, conforme ícone abaixo
 python manage.py migrate
 python manage.py runserver
 ```
@@ -69,6 +71,7 @@ cd agenda
 python -m venv Myenv
 . Myenv/bin/activate
 pip install -r requirements.txt
+configurar o mysql, conforme ícone abaixo
 python manage.py migrate
 python manage.py runserver
 ```
