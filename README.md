@@ -56,8 +56,8 @@ python manage.py runserver
 
 ```
 cd agenda
-python3.7 -m venv Myenv
-. Myenv/bin/activate
+python3.7 -m venv venv
+. venv/bin/activate
 pip install -r requirements.txt
 configurar o mysql, conforme ícone abaixo
 python manage.py migrate
@@ -68,8 +68,8 @@ python manage.py runserver
 
 ```
 cd agenda
-python -m venv Myenv
-. Myenv/bin/activate
+python -m venv venv
+. venv/bin/activate
 pip install -r requirements.txt
 configurar o mysql, conforme ícone abaixo
 python manage.py migrate
