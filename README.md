@@ -106,5 +106,5 @@ Esse projeto está sob a licença MIT. Veja o arquivo [LICENSE](LICENSE.md) para
 <br />
 
 <div align="center">
-  <small>Agradecimentos ao professor Luiz Otávio Miranda</small>  
+  <small>Agradecimentos ao professor Luiz Otávio Miranda / Rafael H. D. Zottesso</small>  
 </div>

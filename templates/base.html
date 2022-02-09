@@ -29,10 +29,63 @@
             </div>
           </form>
         {% endif %}
-        {%block conteudo%} {%endblock%}
-      </div>
-    </div>
+        {%block conteudo%} {%endblock%}        
+      </div>      
+    </div>    
   </div>
+  <footer class="mt-auto">
+
+    <!-- Bloco acima do rodapé com links -->
+    {% block rodape-links %}
+    <div class="container-fluid bg-ifpr text-white p-3">
+        <div class="container">
+            <div class="row">
+                <div class="col-sm">
+                    <h5>Usuários</h5>
+                    <ul class="list-unstyled">
+                        <li><a href="#" class="text-white">Link 1</a></li>
+                        <li><a href="#" class="text-white">Link 2</a></li>
+                        <li><a href="#" class="text-white">Link 3</a></li>
+                    </ul>
+                </div>
+                <div class="col-sm">
+                    <h5>Agendas</h5>
+                    <ul class="list-unstyled">
+                        <li><a href="#" class="text-white">Link 1</a></li>
+                        <li><a href="#" class="text-white">Link 2</a></li>
+                        <li><a href="#" class="text-white">Link 3</a></li>
+                    </ul>
+                </div>
+                <div class="col-sm">
+                    <h5>Acesso rápido</h5>
+                    <ul class="list-unstyled">
+                        <li><a href="#" class="text-white">Link 1</a></li>
+                        <li><a href="#" class="text-white">Link 2</a></li>
+                        <li><a href="#" class="text-white">Link 3</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+    {% endblock %}
+
+
+    <!-- Rodapé -->
+    {% block rodape %}
+    <div class="container-fluid bg-light text-center p-3">
+        <div class="row">
+            <div class="col-md-4 mx-auto text-center">                
+                <p>
+                    <span class="lead">Projeto Agenda Django</span><br>
+                    <span>Desenvolvido por Felipe Lopes</span>
+                </p>
+            </div>
+            </p>
+        </div>
+        {% endblock %}
+
+</footer>
+    
 
 
   <!-- Bootstrap core JavaScript -->
