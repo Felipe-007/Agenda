@@ -1,3 +1,4 @@
+from tabnanny import verbose
 from django.db import models
 from django.utils import timezone
 
@@ -35,8 +36,8 @@ class Contato(models.Model):
     sobrenome = models.CharField(max_length=255, blank=True)
     telefone = models.CharField(max_length=255)
     email = models.CharField(max_length=255, blank=True)
-    data_criacao = models.DateTimeField(default=timezone.now)
-    descricao = models.TextField(blank=True)
+    data_criacao = models.DateTimeField(default=timezone.now, verbose_name = "Data criação")
+    descricao = models.TextField(blank=True, verbose_name = "Descrição")
     categoria = models.ForeignKey(Categoria, on_delete=models.DO_NOTHING)  #faz a referencia entre a tabela Contato e Categoria, não irá fazer nada caso o campo categoria seja apagado
     mostrar = models.BooleanField(default=True)
     foto = models.ImageField(blank=True, upload_to='fotos/%Y/%m/%d')  #upload de imagens
