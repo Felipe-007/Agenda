@@ -3,26 +3,26 @@
 Cores da Agenda 
 */
 .bg-ifpr {
-    background-color: #007834;
+    background-color: #2a3252;
 }
 
 .text-ifpr {
-    color: #007834;
+    color: #2a3252;
 }
 
 .border-ifpr {
-    border-color: #007834;
+    border-color: #2a3252;
 }
 .bg-ifpr-escuro {
-    background-color: #315C23;
+    background-color: #666a7a;
 }
 
 .text-ifpr-escuro {
-    color: #315C23;
+    color: #666a7a;
 }
 
 .border-ifpr-escuro {
-    border-color: #315C23;
+    border-color: #666a7a;
 }
 
 
@@ -79,7 +79,7 @@ Personalização da Barra de menu pra ficar igual do site
 }
 
 .navbar .nav-item:hover{
-    background-color: #315C23;
+    background-color: #666a7a;
 }
 
 
@@ -97,4 +97,8 @@ Largura máxima das tabelas para não ficar mal formatada
 */
 table td{
     max-width: 500px;
+}
+
+.btn-primary {
+    margin-bottom: 1em;
 }
