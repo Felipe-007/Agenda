@@ -5,6 +5,7 @@ from django.core.paginator import Paginator
 from django.db.models import Q, Value
 from django.db.models.functions import Concat
 from django.contrib import messages
+from django.views.generic import TemplateView
 
 def index(request):
     contatos = Contato.objects.all()

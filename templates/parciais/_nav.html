@@ -1,23 +1,24 @@
 {% load static %}
 <!-- Navigation -->
 <nav class="navbar navbar-expand-lg navbar-dark bg-ifpr font-115 shadow">
-    
-    <div class="container">  
+
+    <div class="container">
         <a class="navbar-brand" href="{% url 'index' %}">
             <img src="/static/img/logo.png" height="40" alt="">
         </a>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown"
+            aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
-        </button>      
-        <ul class="navbar-nav mr-auto">            
+        </button>
+        <ul class="navbar-nav mr-auto">
             <li class="nav-item ">
-                <a class="nav-link" href="{% url 'index' %}">                   
+                <a class="nav-link" href="{% url 'index' %}">
                     <i class="fa fa-home" aria-hidden="true"></i>
                     Início
                 </a>
             </li>
             <li class="nav-item ">
-                <a class="nav-link" href="#">
+                <a class="nav-link" href="{% url 'index' %}">
                     <i class="fa fa-info-circle" aria-hidden="true"></i>
                     Sobre
                 </a>
@@ -35,6 +36,33 @@
         </button>
 
         <ul class="navbar-nav">
+            {% if request.user.is_authenticated %}
+            <li class="nav-item">
+                <a class="nav-link" href="{% url 'dashboard' %}">
+                    <i class="fa fa-sign-in" aria-hidden="true"></i>
+                    Agendar
+                </a>
+            </li>
+            <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle text-white" href="#" id="navbarDropdownMenuLink" role="button"
+                    data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    <i class="fa fa-user-circle" aria-hidden="true"></i>
+                    <span id="username">{{ request.user }}</span>
+                </a>
+                <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                    <a class="dropdown-item" href="{% url 'index' %}">
+                        <i class="fa fa-user" aria-hidden="true"></i>
+                        Meus dados</a>
+                    <a class="dropdown-item" href="#">
+                        <i class="fa fa-lock" aria-hidden="true"></i>
+                        Alterar senha</a>
+                    <div class="dropdown-divider"></div>
+                    <a class="dropdown-item" href="{% url 'logout' %}">
+                        <i class="fa fa-sign-out" aria-hidden="true"></i>
+                        Sair</a>
+                </div>
+            </li>
+            {% else %}
             <li class="nav-item">
                 <a class="nav-link" href="{% url 'login' %}">
                     <i class="fa fa-user-plus" aria-hidden="true"></i>
@@ -44,15 +72,10 @@
             <li class="nav-item">
                 <a class="nav-link" href="{% url 'cadastro' %}">
                     <i class="fa fa-sign-in" aria-hidden="true"></i>
-                    Registrar
+                    Criar Conta
                 </a>
             </li>
-            <li class="nav-item">
-                <a class="nav-link" href="{% url 'dashboard' %}">
-                    <i class="fa fa-sign-in" aria-hidden="true"></i>
-                    Agendar
-                </a>
-            </li>
+            {% endif %}
         </ul>
     </div>
 </nav>
