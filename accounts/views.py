@@ -97,3 +97,6 @@ def dashboard(request):
     form.save()
     messages.success(request, f'Contato {request.POST.get("nome")} salvo com sucesso.')
     return redirect('dashboard')
+
+def sobre(request):
+    return render(request, 'accounts/sobre.html')

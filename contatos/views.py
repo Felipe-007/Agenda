@@ -6,6 +6,7 @@ from django.db.models import Q, Value
 from django.db.models.functions import Concat
 from django.contrib import messages
 from django.views.generic import TemplateView
+from django.http import HttpResponse
 
 def index(request):
     contatos = Contato.objects.all()

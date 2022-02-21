@@ -21,5 +21,5 @@ from django.conf.urls.static import static  #upload de imagens
 urlpatterns = [
     path('', include('contatos.urls')),
     path('accounts/', include('accounts.urls')),  #accounts = pasta, sistema de login
-    path('admin/', admin.site.urls),
+    path('admin/', admin.site.urls),    
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)  #upload de imagens
