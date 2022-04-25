@@ -40,7 +40,8 @@ class Contato(models.Model):
     descricao = models.TextField(blank=True, verbose_name = "Descrição")
     categoria = models.ForeignKey(Categoria, on_delete=models.DO_NOTHING)  #faz a referencia entre a tabela Contato e Categoria, não irá fazer nada caso o campo categoria seja apagado
     mostrar = models.BooleanField(default=True)
-    foto = models.ImageField(blank=True, upload_to='fotos/%Y/%m/%d')  #upload de imagens
-
+    foto = models.ImageField(blank=True, upload_to='fotos/%Y/%m/%d')  #upload de imagens   
+     
+        
     def __str__(self):
         return self.nome

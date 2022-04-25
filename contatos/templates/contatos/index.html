@@ -15,6 +15,7 @@
                 <th>Sobrenome</th>
                 <th>Telefone</th>
                 <th>Categoria</th>
+                <th>Alterar Dados</th>                                             
             </tr>
         </thead>
         <tbody>
@@ -28,6 +29,10 @@
                 <td>{{ contato.sobrenome }}</td>
                 <td>{{ contato.telefone }}</td>
                 <td>{{ contato.categoria }}</td>
+                <td>
+                    <a class="btn btn-warning btn-sm" href="{% url 'dashboard' %}" role="button"><i class="fa fa-pencil" aria-hidden="true"></i></a>                                     
+                    <a class="btn btn-danger btn-sm" href="{% url 'delete_contato' contato.id %}"><i class="fa fa-trash" aria-hidden="true"></i></a>
+                </td>         
             </tr>
             {% endif %}
             {% endfor %}

@@ -93,7 +93,7 @@ def dashboard(request):
         messages.error(request, 'A descrição precisa ter mais de 5 caracteres.')
         form = FormContato(request.POST)
         return render(request, 'accounts/dashboard.html', {'form': form})
-
+    
     form.save()
     messages.success(request, f'Contato {request.POST.get("nome")} salvo com sucesso.')
     return redirect('dashboard')
